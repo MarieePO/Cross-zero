@@ -4,7 +4,7 @@ interface ICell {
 }
 
 type IPlayer = 'X' | 'O'
-type IWinner = IPlayer | null
+type IWinner = IPlayer | null | 'draw'
 type IBoard = ICell[]
 
 export type {

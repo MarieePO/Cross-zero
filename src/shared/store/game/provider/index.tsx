@@ -13,13 +13,22 @@ const GameProvider: FC<PropsWithChildren> = ({children}) => {
 	const [board, setBoard] = useState<IBoard>(defaultBoard);
 	const [currentPlayer, setCurrentPlayer] = useState<IPlayer>(defaultCurrentPlayer);
 	const [winner, setWinner] = useState<IWinner>(defaultWinner);
-
+	const [moveCount, setMoveCount] = useState(0);
+	
+	const resetGame = () => {
+		setBoard(defaultBoard);
+		setCurrentPlayer(defaultCurrentPlayer);
+		setWinner(defaultWinner);
+		setMoveCount(0);
+	}
 	const context = {
 		board, setBoard,
 		currentPlayer, setCurrentPlayer,
-		winner, setWinner
+		winner, setWinner,
+		moveCount, setMoveCount,
+		resetGame,
 	}
-
+	
 	return (
 		<GameContext.Provider value={context}>
 			{children}

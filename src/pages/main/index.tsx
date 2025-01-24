@@ -9,7 +9,11 @@ const MainPage = (): ReactNode => {
 
 	return (
 		<main className={styles.page}>
-			{!!winner && <h1 className="text-4xl">Игрок {winner} победил!</h1>}
+			{winner && (
+				<h1 className="font-semibold">
+					{winner === 'draw' ? 'Ничья' : `Победил игрок ${winner}`}
+				</h1>
+				)}
 
 			<BoardWidget />
 
